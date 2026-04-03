@@ -1,0 +1,7 @@
+﻿.next/dev/types/validator.ts(42,39): error TS2306: File 'C:/Users/bhatt/Desktop/Projects/bhetghat/src/app/Menu/page.tsx' is not a module.
+.next/dev/types/validator.ts(51,39): error TS2306: File 'C:/Users/bhatt/Desktop/Projects/bhetghat/src/app/about/page.tsx' is not a module.
+src/components/ui/page.tsx(2,22): error TS2307: Cannot find module '@radix-ui/react-slot' or its corresponding type declarations.
+src/components/ui/page.tsx(3,40): error TS2307: Cannot find module 'class-variance-authority' or its corresponding type declarations.
+src/components/ui/page.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/page.tsx(42,19): error TS2339: Property 'variant' does not exist on type 'ButtonProps'.
+src/components/ui/page.tsx(42,28): error TS2339: Property 'size' does not exist on type 'ButtonProps'.
