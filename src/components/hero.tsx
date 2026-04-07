@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
     {
         image: "/images/hero.png",
-        title: "Taste the <br/> <span class='text-[#F26522]'>Soul</span> of <br/> Kathmandu",
+        title: "Taste the <br/> <span class='text-[#F26522]'>Soul of</span>  <br/> Kathmandu",
         description: "Journey through the authentic flavors of the Himalayas. Our kitchen crafts timeless Nepalese traditions since 1987.",
         badge: "Est. 1987",
         cta: "Explore Full Menu",
@@ -65,7 +65,7 @@ export default function HeroSection() {
                         />
                     </motion.div>
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-[#0e0e0e]/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-[#131313]" />
                 <div className="absolute inset-0 bg-black/20" />
             </div>
 
@@ -90,7 +90,7 @@ export default function HeroSection() {
                             className="text-4xl md:text-6xl lg:text-8xl font-headline font-black text-white leading-[0.95] tracking-tighter mb-8"
                             dangerouslySetInnerHTML={{ __html: slides[current].title }}
                         />
-                        <p className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-12 font-medium leading-relaxed opacity-90">
+                        <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 font-medium text-[#ffb599]">
                             {slides[current].description}
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -100,7 +100,7 @@ export default function HeroSection() {
                                 </button>
                             </Link>
                             <Link href="/gallery">
-                                <button className="bg-white/5 backdrop-blur-md text-white border border-white/10 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">
+                                <button className="bg-white/5 backdrop-blur-md text-white border border-white/10 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all">
                                     View Gallery
                                 </button>
                             </Link>
@@ -110,6 +110,6 @@ export default function HeroSection() {
             </div>
 
 
-        </section>
+        </section >
     );
 }

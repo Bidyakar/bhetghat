@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const storySections = [
     {
@@ -23,173 +24,227 @@ const storySections = [
 
 const values = [
     {
-        id: 1,
+        id: "01",
         title: "Pure Authenticity",
         description: "We never compromise on the traditional methods and hand-ground spices that define our mountain cuisine.",
-        icon: "verified"
     },
     {
-        id: 2,
+        id: "02",
         title: "Sacred Hospitality",
         description: "Guests are treated as family, in accordance with the age-old mountain traditions of 'Atithi Devo Bhava'.",
-        icon: "handshake"
     },
     {
-        id: 3,
+        id: "03",
         title: "Uncompromising Quality",
         description: "Only the freshest locally sourced ingredients make it into our signature heritage dishes.",
-        icon: "stars"
     }
 ];
 
 export default function AboutPage() {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
     return (
-        <main className="bg-[#0e0e0e] min-h-screen text-white pt-24 overflow-hidden">
-            {/* Cinematic Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjv3MBPQM-RUYDOzGZDgr9uTiByPZdH8VCN4A8QrOs7nSIBXKINPnAt7zNfl4XCtbcQw_ozPewPA7WDcEPyOSeB-8vx082JPbPhpB1t0jI96W530DA3ZXaLlIcStjx9rgB_U081obmucKM5eSHdMCdiI2VfER_mcO5HQ2bMiYprdSDhW6gJBSH2d1UrysoQqFriO_1hhA8TzkPFGq0wf1Uu9-wiRlTdj6w7jxtEef9ylDHn6HgaDuMj9-52QGSFj37jfIqBAnluxs"
-                        alt="Cinematic Himalayan peaks shrouded in mist"
-                        fill
-                        className="object-cover opacity-40 grayscale contrast-125 saturate-0"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0e0e0e] via-transparent to-[#0e0e0e]" />
-                </div>
-                <div className="relative z-10 text-center max-w-5xl px-6 space-y-8">
-                    <motion.span 
-                        initial={{ opacity: 0, letterSpacing: "0.5em" }}
-                        animate={{ opacity: 1, letterSpacing: "0.2em" }}
-                        className="text-[#F26522] font-black uppercase text-xs sm:text-sm block"
-                    >
-                        Our Sacred Legacy
-                    </motion.span>
-                    <motion.h1 
+        <main
+            ref={containerRef}
+            className="bg-[#131313] text-white selection:bg-[#F26522] selection:text-white pt-24 overflow-x-hidden min-h-screen"
+        >
+            <style jsx global>{`
+                @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Syne:wght@400;700;800&family=Alex+Brush&display=swap');
+                .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+                .font-syne { font-family: 'Syne', sans-serif; }
+                .font-signature { font-family: 'Alex Brush', cursive; }
+                .noise-overlay {
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                    opacity: 0.04;
+                    pointer-events: none;
+                }
+            `}</style>
+
+            <div className="absolute inset-0 noise-overlay pointer-events-none z-50 mix-blend-overlay" />
+
+            <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-24 border-b border-white/5">
+                <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 flex flex-col items-center text-center">
+                    <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.95] tracking-tighter"
+                        transition={{ duration: 0.8 }}
+                        className="space-y-6"
                     >
-                        A Heritage of <br />
-                        <span className="italic text-[#F26522]">Excellence.</span>
-                    </motion.h1>
+                        <div className="flex items-center justify-center gap-4">
+                            <div className="w-8 h-px bg-[#F26522]" />
+                            <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522]">Our Sacred Legacy</span>
+                            <div className="w-8 h-px bg-[#F26522]" />
+                        </div>
+                        <h1 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[1.1] tracking-tight">
+                            A Heritage of <br />
+                            <em className="text-[#F26522] italic">Excellence</em>
+                        </h1>
+                        <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+                            A philosophical approach to traditional dining, where every dish is a living archive of our mountain culture.
+                        </p>
+                    </motion.div>
+                </div>
+
+                <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden xl:block">
+                    <span className="font-syne text-[10px] tracking-[1em] uppercase text-[#F26522]/30 [writing-mode:vertical-rl]">
+                        Chronicles / 1987 — 2024
+                    </span>
                 </div>
             </section>
 
-            {/* Editorial Story Section */}
-            <section className="py-40 px-8 max-w-[1400px] mx-auto space-y-64">
-                {storySections.map((section, index) => (
-                    <div 
-                        key={section.year}
-                        className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-24`}
-                    >
-                        <div className="lg:w-1/2 space-y-10">
+            <section className="relative py-40 px-6 md:px-12 lg:px-24">
+                <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 space-y-48">
+                    {storySections.map((section, index) => (
+                        <div
+                            key={section.year}
+                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24 group`}
+                        >
+
+                            <div className="lg:w-1/2 space-y-10 relative z-10">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8 }}
+                                    className="space-y-8"
+                                >
+                                    <div className="flex flex-col">
+                                        <span className="font-cormorant text-9xl font-light text-[#f26522]/10 group-hover:text-[#f26522]/80 transition-all duration-700 select-none" style={{ WebkitTextStroke: '1px rgba(242, 101, 34, 0.2)' }}>
+                                            {section.year}
+                                        </span>
+                                        <h2 className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">
+                                            {section.title}
+                                        </h2>
+                                    </div>
+
+                                    <div className="w-12 h-px bg-[#F26522]/40 group-hover:w-143 group-hover:bg-[#F26522] transition-all duration-700" />
+
+                                    <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+                                        &ldquo;{section.content}&rdquo;
+                                    </p>
+                                </motion.div>
+                            </div>
+
                             <motion.div
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                className="space-y-6"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.2 }}
+                                className="lg:w-1/2 relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden bg-neutral-900 shadow-2xl"
                             >
-                                <span className="text-[#F26522] font-serif italic text-8xl md:text-9xl opacity-20 block leading-none">
-                                    {section.year}
-                                </span>
-                                <h2 className="text-5xl md:text-6xl font-serif text-white tracking-tight leading-tight">
-                                    {section.title}
-                                </h2>
-                                <p className="text-zinc-400 text-xl leading-relaxed max-w-xl italic">
-                                    &ldquo;{section.content}&rdquo;
-                                </p>
+                                <Image
+                                    src={section.image}
+                                    alt={section.alt}
+                                    fill
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] ease-out hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-[#181818]/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
+
+                                <div className="absolute bottom-6 left-6 border border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md px-4 py-2">
+                                    <span className="font-syne text-[9px] tracking-[0.4em] uppercase text-[#F26522]">
+                                        Archive {index + 1}
+                                    </span>
+                                </div>
                             </motion.div>
                         </div>
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            className="lg:w-1/2 relative h-[600px] w-full rounded-[4rem] overflow-hidden shadow-3xl group border border-white/5 bg-[#151515]"
-                        >
-                            <Image
-                                src={section.image}
-                                alt={section.alt}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-[2000ms] contrast-110 grayscale group-hover:grayscale-0 duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        </motion.div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </section>
 
-            {/* Core Values Section */}
-            <section className="py-40 bg-[#121212] relative overflow-hidden border-y border-white/5">
-                <div className="max-w-7xl mx-auto px-8 relative z-10">
+            <section className="relative bg-[#131313] text-white py-40 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
+
+
+                <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                     <div className="text-center mb-32 space-y-6">
-                        <motion.span 
+                        <motion.span
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
-                            className="text-[#F26522] font-black tracking-[0.4em] uppercase text-xs block"
+                            viewport={{ once: true }}
+                            className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522] block"
                         >
                             The Foundation
                         </motion.span>
-                        <h2 className="text-6xl md:text-7xl font-serif text-white tracking-tight">
-                            The Spirit of <span className="italic text-[#F26522]">Bhetghat</span>
+                        <h2 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[1.1] tracking-tight">
+                            The Spirit of <br />
+                            <span className="italic text-[#F26522]">Bhetghat</span>
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
                         {values.map((value, index) => (
-                            <motion.div 
+                            <motion.div
                                 key={value.id}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="p-12 rounded-[3.5rem] bg-white/5 border border-white/10 space-y-8 hover:bg-white/[0.08] transition-all group hover:-translate-y-2 shadow-2xl"
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.15, duration: 0.8 }}
+                                className="group flex flex-col gap-6"
                             >
-                                <div className="w-20 h-20 rounded-[2rem] bg-[#F26522]/10 flex items-center justify-center text-[#F26522] group-hover:bg-[#F26522] group-hover:text-white transition-all shadow-xl">
-                                    <span className="material-symbols-outlined text-4xl">{value.icon}</span>
+                                <div className="flex items-center gap-4 border-b border-gray pb-6 group-hover:border-[#F26522]/30 transition-colors duration-500">
+                                    <span className="font-syne text-[11px] tracking-[0.3em] text-[#F26522]">
+                                        {value.id}
+                                    </span>
+                                    <h3 className="font-cormorant text-3xl font-light italic text-gray-400">
+                                        {value.title}
+                                    </h3>
                                 </div>
-                                <div className="space-y-4">
-                                    <h3 className="text-3xl font-serif text-white">{value.title}</h3>
-                                    <p className="text-zinc-500 leading-relaxed italic text-lg">
-                                        {value.description}
-                                    </p>
-                                </div>
+                                <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+                                    {value.description}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
                 </div>
-                
-                {/* Background Art */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#F26522]/5 rounded-full blur-[200px] pointer-events-none" />
             </section>
 
-            {/* Premium CTA Section */}
-            <section className="py-40 px-8">
-                <motion.div 
+            <section className="relative py-48 px-6 text-center bg-gradient-to-b from-[#131313] to-[#181818]">
+                <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="max-w-5xl mx-auto text-center space-y-12 p-16 md:p-24 rounded-[4.5rem] bg-[#151515] border border-white/5 relative overflow-hidden shadow-3xl"
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    className="max-w-4xl mx-auto space-y-12 relative z-10"
                 >
-                    <div className="relative z-10 space-y-10">
-                        <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight tracking-tight">
-                            Experience the <br />
-                            Sacred <span className="italic text-[#F26522]">Heritage.</span>
-                        </h2>
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-4">
-                            <Link href="/Menu">
-                                <button className="bg-[#F26522] text-white px-14 py-6 rounded-2xl font-bold text-xl shadow-2xl shadow-[#F26522]/20 hover:shadow-[#F26522]/40 hover:-translate-y-1 transition-all">
-                                    Explore Menu
-                                </button>
-                            </Link>
-                            <Link href="/">
-                                <button className="bg-white/5 border border-white/10 text-white px-14 py-6 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all">
-                                    Back to Home
-                                </button>
-                            </Link>
-                        </div>
+                    <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522]">
+                        Join the Legacy
+                    </span>
+                    <h2 className="text-7xl md:text-8xl font-serif text-white leading-[1.1] tracking-tight">
+                        Experience the <br />
+                        <em className="italic text-[#F26522]">Heritage.</em>
+                    </h2>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
+                        <Link
+                            href="/Menu"
+                            className="group flex items-center justify-center gap-3 bg-[#F26522] text-white w-full sm:w-auto px-10 py-5 font-syne text-[10px] tracking-[0.3em] uppercase hover:bg-[#d9561e] transition-colors duration-300"
+                        >
+                            Explore Menu
+                            <svg className="group-hover:translate-x-1 transition-transform" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                                <path d="M1 5h14M11 1l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </Link>
+                        <Link
+                            href="/"
+                            className="w-full sm:w-auto border border-white/10 text-white/50 hover:text-white hover:border-[#F26522]/50 px-10 py-5 font-syne text-[10px] tracking-[0.3em] uppercase transition-all duration-300"
+                        >
+                            Back to Home
+                        </Link>
                     </div>
-                    {/* Background Art */}
-                    <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-[#F26522]/10 rounded-full blur-[150px] opacity-40 pointer-events-none" />
                 </motion.div>
+
+
+                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw] leading-none select-none pointer-events-none whitespace-nowrap opacity-[0.02] z-0">
+                    <Image
+                        src="/images/delivery.jpg"
+                        alt="Logo"
+
+                        fill
+                    />
+                </div>
             </section>
         </main>
     );

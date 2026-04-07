@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PromoSection() {
     return (
-        <section className="py-24 px-8 max-w-7xl mx-auto bg-[#181818]">
+        <section className="py-24 px-6 lg:px-16 2xl:px-32 w-full max-w-[2200px] mx-auto bg-[#181818]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
 
@@ -11,7 +11,7 @@ export default function PromoSection() {
                         <span className="bg-[#F26522] text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">
                             LIMITED TIME
                         </span>
-                        <h2 className="text-4xl font-headline font-black text-background mb-4">
+                        <h2 className="text-3xl md:text-4xl font-headline font-black text-background mb-4">
                             First Order <br />
                             Special - 10% OFF
                         </h2>
@@ -36,7 +36,7 @@ export default function PromoSection() {
                         <span className="text-[#F26522] font-bold mb-4 inline-block">
                             LUNCH COMBO
                         </span>
-                        <h2 className="text-4xl font-headline font-black text-white mb-4">
+                        <h2 className="text-3xl md:text-4xl font-headline font-black text-white mb-4">
                             The Thakali <br />
                             Experience
                         </h2>

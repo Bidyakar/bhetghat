@@ -12,15 +12,15 @@ const teaserImages = [
 
 export default function GalleryTeaser() {
     return (
-        <section className="bg-[#181818] py-40 px-8 overflow-hidden relative">
-            <div className="max-w-7xl mx-auto relative z-10">
-                <div className="flex flex-col lg:flex-row gap-24 items-center">
+        <section className="bg-[#181818] py-20 sm:py-28 md:py-40 px-4 sm:px-8 overflow-hidden relative">
+            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
+                <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-32 items-center">
                     {/* Visual Side - Editorial Grid */}
-                    <div className="lg:w-3/5 grid grid-cols-2 gap-6 h-[700px] w-full">
+                    <div className="lg:w-[55%] grid grid-cols-2 gap-3 sm:gap-6 h-[350px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            className="relative rounded-[3rem] overflow-hidden col-span-1 row-span-2 border border-white/5"
+                            className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden col-span-1 row-span-2 border border-white/5"
                         >
                             <Image
                                 src="/images/thakali.jpg"
@@ -34,7 +34,7 @@ export default function GalleryTeaser() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 }}
-                            className="relative rounded-[3rem] overflow-hidden col-span-1 row-span-1 border border-white/5"
+                            className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden col-span-1 row-span-1 border border-white/5"
                         >
                             <Image
                                 src="/images/momo.jpg"
@@ -47,7 +47,7 @@ export default function GalleryTeaser() {
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="relative rounded-[3rem] overflow-hidden col-span-1 row-span-1 border border-white/5"
+                            className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden col-span-1 row-span-1 border border-white/5"
                         >
                             <Image
                                 src="/images/chickentaas.jpg"
@@ -59,7 +59,7 @@ export default function GalleryTeaser() {
                     </div>
 
                     {/* Text Side - Editorial Styling */}
-                    <div className="lg:w-2/5 space-y-10">
+                    <div className="lg:w-[40%] space-y-10">
                         <div className="space-y-6">
                             <motion.span
                                 initial={{ opacity: 0, x: 20 }}
@@ -72,7 +72,7 @@ export default function GalleryTeaser() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] tracking-tight"
                             >
                                 A Visual <br />
                                 <span className="italic text-[#F26522]">Narrative.</span>
@@ -83,7 +83,7 @@ export default function GalleryTeaser() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="text-zinc-400 text-lg leading-relaxed max-w-sm italic"
+                            className="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-sm"
                         >
                             Capture the essence of the Himalayas through our lens. From vibrant spices to
                             warm heritage interiors, discover Bhetghat's soul.

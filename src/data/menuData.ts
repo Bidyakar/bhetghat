@@ -470,5 +470,15 @@ export const menuItems: MenuItem[] = [
         subcategory: 'Hot Tea',
         isVegetarian: true,
         isPopular: true
+    },
+    {
+        id: 'alcoholic-beer',
+        name: 'Beer',
+        description: 'Cold Beer',
+        price: 300,
+        image: '/images/hero.jpg',
+        category: 'alcoholic',
+        subcategory: 'Wine & Beer',
+        isPopular: true
     }
 ];

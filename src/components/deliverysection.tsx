@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export default function DeliverySection() {
     return (
-        <section className="bg-[#2a2a2a] max-w-6xl mx-auto rounded-3xl p-1 md:p-12 overflow-hidden relative">
+        <section className="bg-[#2a2a2a] max-w-xl 2xl:max-w-[1600px] mx-auto rounded-3xl p-1  md:p-12 overflow-hidden relative">
 
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
                 <div className="p-8 md:p-0">
-                    <h2 className="text-4xl md:text-5xl font-headline font-black text-white mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-white mb-4 sm:mb-6">
                         Bhetghat <br />
                         at your door
                     </h2>
-                    <p className="text-on-surface-variant text-lg mb-10">
+                    <p className="text-on-surface-variant text-base sm:text-lg mb-6 sm:mb-10">
                         We bring the authentic taste of Kathmandu directly to your dining
                         room. Fast, fresh, and contact-free delivery across the city.
                     </p>
@@ -40,19 +40,19 @@ export default function DeliverySection() {
                             </div>
                         </div>
                     </div>
-                    <button className="smoldering-gradient bg-[#F26522] text-on-primary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(242,101,34,0.3)] transition-all">
+                    <button className="smoldering-gradient bg-[#F26522] text-on-primary-fixed px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:shadow-[0_0_20px_rgba(242,101,34,0.3)] transition-all w-full sm:w-auto text-center">
                         Order for Delivery
                     </button>
                 </div>
 
-                <div className="relative h-full min-h-[400px]">
+                <div className="relative h-full min-h-[280px] sm:min-h-[400px]">
                     <Image
                         src="/images/delivery.jpg"
                         alt="Delivery boy in a scooter to deliver food"
                         fill
                         className="object-cover rounded-2xl"
                     />
-                    <div className="absolute -bottom-6 -left-6 glass-panel bg-[#131313]/80 backdrop-blur-md p-6 rounded-2xl ">
+                    <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 glass-panel bg-[#131313]/80 backdrop-blur-md p-4 sm:p-6 rounded-xl sm:rounded-2xl">
                         <div className="flex items-center gap-4">
                             <div className="flex -space-x-4">
                                 <div className="w-10 h-10 rounded-full border-2 border-surface-container-high bg-gray-500" />

@@ -24,16 +24,16 @@ const aboutCaptions = [
         id: 4,
         icon: "restaurant_menu",
         text: "A diverse menu featuring the soul of Nepalese hospitality and flavor.",
-    },
+    }
 ];
 
 export default function AboutSection() {
     return (
         <section className="py-32 bg-[#181818] overflow-hidden relative">
-            <div className="container max-w-7xl mx-auto px-8 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-24">
-                    {/* Left Content */}
-                    <div className="lg:w-1/2 space-y-10">
+            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
+
+                    <div className="lg:w-[45%] space-y-10">
                         <div className="space-y-6">
                             <motion.span
                                 initial={{ opacity: 0, x: -20 }}
@@ -94,14 +94,14 @@ export default function AboutSection() {
                         >
                             <Link href="/about" className="inline-flex items-center gap-4 group">
                                 <span className="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-2xl font-bold hover:bg-[#F26522] hover:border-transparent transition-all">
-                                    Our Full Story
+                                    Our Story
                                 </span>
                             </Link>
                         </motion.div>
                     </div>
 
                     {/* Right Image */}
-                    <div className="lg:w-1/2 relative group">
+                    <div className="lg:w-[45%] relative group">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}

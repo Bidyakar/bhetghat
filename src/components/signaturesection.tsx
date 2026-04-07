@@ -12,25 +12,20 @@ const smallDishes = [
 
 export default function SignatureSection() {
     return (
-        <section className="py-24 bg-[#181818] relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-24 bg-[#181818] relative overflow-hidden">
+
+            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
 
 
-
-
-
-
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-0">
-
-
-                    <div className="lg:w-1/2 relative flex items-center justify-center min-h-[520px]">
+                    <div className="lg:w-1/2 relative flex items-center justify-center min-h-[320px] sm:min-h-[380px] md:min-h-[500px]">
 
                         <div
                             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 rounded-r-[3rem]"
                             style={{
                                 width: '52%',
                                 height: '82%',
-                                background: 'linear-gradient(160deg, #F26522 0%, #ffb599 100%)',
+                                background: 'linear-gradient(160deg, #F26522 0%, #af370cff 100%)',
                                 zIndex: 0,
                             }}
                         />
@@ -40,8 +35,7 @@ export default function SignatureSection() {
                             whileInView={{ opacity: 1, x: 0, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative z-10 rounded-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border-[10px] border-white/8 group"
-                            style={{ width: 380, height: 380, flexShrink: 0 }}
+                            className="relative z-10 rounded-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border-[6px] sm:border-[10px] border-white/8 group w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px]"
                         >
                             <Image
                                 src="/images/thakali.jpg"
@@ -53,16 +47,60 @@ export default function SignatureSection() {
                         </motion.div>
 
 
-                        <div className="relative z-10 flex flex-col gap-5 ml-6">
+                        <div className="absolute inset-0 z-20 pointer-events-none hidden md:block">
+                            {smallDishes.map((dish, index) => {
+                                const radius = 280;
+                                const startAngle = -40;
+                                const spread = 80;
+
+                                const angle =
+                                    (startAngle + (index / (smallDishes.length - 1)) * spread) *
+                                    (Math.PI / 180);
+
+                                const x = radius * Math.cos(angle);
+                                const y = radius * Math.sin(angle);
+
+                                return (
+                                    <motion.div
+                                        key={dish.id}
+                                        initial={{ opacity: 0, scale: 0.7 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.2 + index * 0.1 }}
+                                        className="absolute rounded-full overflow-hidden border-[5px] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55)] group/small cursor-pointer pointer-events-auto hover:scale-110 hover:border-[#F26522]/50 transition-all duration-500"
+                                        style={{
+                                            width: 112,
+                                            height: 112,
+                                            left: `calc(50% + ${x}px - 56px)`,
+                                            top: `calc(50% + ${y}px - 56px)`
+                                        }}
+                                    >
+                                        <Image
+                                            src={dish.image}
+                                            alt={dish.name}
+                                            fill
+                                            className="object-cover group-hover/small:scale-125 transition-transform duration-700 brightness-90 group-hover/small:brightness-110"
+                                        />
+
+                                        <div className="absolute inset-0 bg-[#F26522]/0 group-hover/small:bg-[#F26522]/20 transition-colors duration-400 flex items-end justify-center pb-2">
+                                            <span className="text-white text-[10px] font-black tracking-wide opacity-0 group-hover/small:opacity-100 transition-opacity duration-300 drop-shadow-lg">
+                                                {dish.name}
+                                            </span>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                        <div className="relative z-10 flex flex-row md:hidden justify-center gap-4 mt-6">
                             {smallDishes.map((dish, index) => (
                                 <motion.div
                                     key={dish.id}
-                                    initial={{ opacity: 0, x: 40 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.25 + index * 0.12, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                                    className="relative rounded-full overflow-hidden border-[5px] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55)] group/small cursor-pointer hover:scale-110 hover:border-[#F26522]/50 transition-all duration-500"
-                                    style={{ width: 112, height: 112, flexShrink: 0 }}
+                                    transition={{ delay: 0.1 + index * 0.1 }}
+                                    className="relative rounded-full overflow-hidden border-[4px] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55)] group/small cursor-pointer hover:border-[#F26522]/50 transition-all duration-500"
+                                    style={{ width: 80, height: 80, flexShrink: 0 }}
                                 >
                                     <Image
                                         src={dish.image}
@@ -70,10 +108,9 @@ export default function SignatureSection() {
                                         fill
                                         className="object-cover group-hover/small:scale-125 transition-transform duration-700 brightness-90 group-hover/small:brightness-110"
                                     />
-
                                     <div className="absolute inset-0 bg-[#F26522]/0 group-hover/small:bg-[#F26522]/20 transition-colors duration-400 flex items-end justify-center pb-2">
-                                        <span className="text-white text-[10px] font-black tracking-wide opacity-0 group-hover/small:opacity-100 transition-opacity duration-300 drop-shadow-lg">
-                                            {dish.name}
+                                        <span className="text-white text-[8px] font-black tracking-wide opacity-0 group-hover/small:opacity-100 transition-opacity duration-300 drop-shadow-lg text-center">
+                                            {dish.name.split(' ')[0]}
                                         </span>
                                     </div>
                                 </motion.div>
@@ -81,7 +118,7 @@ export default function SignatureSection() {
                         </div>
                     </div>
 
-                    <div className="lg:w-1/2 pl-0 lg:pl-20 space-y-10 mt-16 lg:mt-0">
+                    <div className="lg:w-1/2 pl-0 lg:pl-10 2xl:pl-20 space-y-10 mt-16 lg:mt-0">
 
 
                         <motion.div
@@ -92,7 +129,7 @@ export default function SignatureSection() {
                             className="space-y-5"
                         >
                             <h2
-                                className="text-5xl md:text-6xl font-black leading-[1.0] tracking-tight text-white"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.0] tracking-tight text-white"
                                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                             >
                                 Signature Culinary <br />
@@ -114,7 +151,7 @@ export default function SignatureSection() {
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-zinc-300 text-lg leading-relaxed"
+                                className="text-zinc-300 text-base sm:text-lg leading-relaxed"
                                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                             >
                                 At Bhetghat, our signature dishes are more than just meals — they are a tribute
@@ -127,7 +164,7 @@ export default function SignatureSection() {
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.32 }}
-                                className="text-zinc-500 text-lg leading-relaxed italic"
+                                className="text-zinc-500 text-base sm:text-lg leading-relaxed italic"
                                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                             >
                                 From our hand-wrapped momos in sesame broth to the legendary Thakali feast
@@ -142,18 +179,18 @@ export default function SignatureSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.44 }}
-                            className="flex items-center gap-8 pt-2"
+                            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 pt-2"
                         >
                             <Link href="/Menu">
                                 <button
-                                    className="bg-[#F26522] text-white border border-white/10 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#F26522]/80 transition-all"
+                                    className="bg-[#F26522] text-white border border-white/10 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:shadow-[#F26522]/40 hover:-translate-y-1 transition-all text-center"
                                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                                 >
                                     Explore Menu
                                 </button>
                             </Link>
                             <Link href="/about">
-                                <button className="bg-white/5 backdrop-blur-md text-white border border-white/10 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">
+                                <button className="bg-white/5 backdrop-blur-md text-white border border-white/10 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:shadow-[white]/40 hover:-translate-y-1 transition-all text-center">
                                     Our Heritage
                                 </button>
                             </Link>

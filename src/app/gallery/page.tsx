@@ -11,11 +11,11 @@ const galleryItems = [
     { id: 2, image: "/images/thakali.jpg", name: "Thakali Set", category: "Ambience" },
     { id: 3, image: "/images/chickentaas.jpg", name: "Chicken Taas", category: "Mutton" },
     { id: 4, image: "/images/drumstick2.jpg", name: "Sekuwa", category: "Mutton" },
-    { id: 5, image: "/images/biryani.jpg", name: "Kathmandu Biryani", category: "Biryani" },
-    { id: 6, image: "/images/sukuti.jpg", name: "Mutton Sukuti", category: "Mutton" },
-    { id: 7, image: "/images/chowmein.jpg", name: "Buff Chowmein", category: "Chowmein" },
-    { id: 8, image: "/images/kothey.jpg", name: "Fried Kothey Momo", category: "Momos" },
-    { id: 9, image: "/images/interior.jpg", name: "Our Dining Hall", category: "Ambience" },
+    { id: 5, image: "/images/drumstick2.jpg", name: "Kathmandu Biryani", category: "Biryani" },
+    { id: 6, image: "/images/chickentaas.jpg", name: "Mutton Sukuti", category: "Mutton" },
+    { id: 7, image: "/images/hero.jpg", name: "Buff Chowmein", category: "Chowmein" },
+    { id: 8, image: "/images/hero.png", name: "Fried Kothey Momo", category: "Momos" },
+    { id: 9, image: "/images/thakali.jpg", name: "Our Dining Hall", category: "Ambience" },
 ];
 
 export default function GalleryPage() {
@@ -30,20 +30,42 @@ export default function GalleryPage() {
             className="min-h-screen bg-[#13131313] text-white pt-28 pb-24 relative overflow-hidden"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-            <motion.div
-                animate={{ y: [0, 10, 0], rotate: [0, 6, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-20 right-0 pointer-events-none z-10 opacity-50"
-            >
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                    <circle cx="40" cy="40" r="36" fill="#e74c3c" fillOpacity="0.85" />
-                    <circle cx="40" cy="40" r="28" fill="#c0392b" fillOpacity="0.5" />
-                    <line x1="40" y1="12" x2="40" y2="68" stroke="#fff" strokeWidth="1" strokeOpacity="0.3" />
-                    <line x1="12" y1="40" x2="68" y2="40" stroke="#fff" strokeWidth="1" strokeOpacity="0.3" />
-                    <line x1="20" y1="20" x2="60" y2="60" stroke="#fff" strokeWidth="1" strokeOpacity="0.2" />
-                    <line x1="60" y1="20" x2="20" y2="60" stroke="#fff" strokeWidth="1" strokeOpacity="0.2" />
+            {/* -- PREMIUM GEOMETRIC ORNAMENT -- */}
+            <div className="absolute bottom-0 right-0 pointer-events-none z-0 opacity-20 transform translate-x-1/4 translate-y-1/4 overflow-hidden">
+                <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="patternGradient" x1="0" y1="0" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#F26522" stopOpacity="0.8" />
+                            <stop offset="1" stopColor="#F26522" stopOpacity="0" />
+                        </linearGradient>
+                    </defs>
+                    {[...Array(15)].map((_, i) => (
+                        <motion.path
+                            key={i}
+                            d={`M ${150 + i * 40} 0 Q ${800 - i * 30} 400 ${150 + i * 40} 800`}
+                            stroke="url(#patternGradient)"
+                            strokeWidth="1.2"
+                            strokeLinecap="round"
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 4, delay: i * 0.1, ease: "easeInOut" }}
+                        />
+                    ))}
+                    {[...Array(15)].map((_, i) => (
+                        <motion.path
+                            key={`h-${i}`}
+                            d={`M 0 ${150 + i * 40} Q 400 ${800 - i * 30} 800 ${150 + i * 40}`}
+                            stroke="url(#patternGradient)"
+                            strokeWidth="0.8"
+                            strokeOpacity="0.5"
+                            strokeLinecap="round"
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 4, delay: i * 0.15, ease: 'easeInOut' }}
+                        />
+                    ))}
                 </svg>
-            </motion.div>
+            </div>
 
 
             <header className="text-center mb-12 px-6">
@@ -85,8 +107,8 @@ export default function GalleryPage() {
                 ))}
             </motion.nav>
 
-            {/* ════ GALLERY GRID ════ */}
-            <section className="max-w-[1100px] mx-auto px-6">
+
+            <section className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32">
                 <motion.div
                     layout
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
@@ -111,9 +133,9 @@ export default function GalleryPage() {
                                     className="object-cover transition-transform duration-700 group-hover:scale-110 brightness-90 group-hover:brightness-100"
                                 />
 
-                                {/* Hover overlay */}
+
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
-                                    {/* Zoom icon */}
+
                                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-400 w-12 h-12 rounded-full border-2 border-[#F26522] flex items-center justify-center">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <circle cx="9" cy="9" r="6" stroke="#F26522" strokeWidth="1.8" />
@@ -124,7 +146,7 @@ export default function GalleryPage() {
                                     </div>
                                 </div>
 
-                                {/* Name label */}
+
                                 <div className="absolute bottom-0 left-0 right-0 py-3 px-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-400">
                                     <span className="text-white text-sm font-bold tracking-wide">{item.name}</span>
                                 </div>
@@ -133,7 +155,7 @@ export default function GalleryPage() {
                     </AnimatePresence>
                 </motion.div>
 
-                {/* ── View All button ── */}
+
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +168,6 @@ export default function GalleryPage() {
                 </motion.div>
             </section>
 
-            {/* ════ LIGHTBOX ════ */}
             <AnimatePresence>
                 {lightbox && (
                     <motion.div
@@ -170,7 +191,7 @@ export default function GalleryPage() {
                                 fill
                                 className="object-cover"
                             />
-                            {/* Close */}
+
                             <button
                                 onClick={() => setLightbox(null)}
                                 className="absolute top-4 right-4 w-10 h-10 bg-black/60 hover:bg-[#F26522] transition-colors rounded-full flex items-center justify-center text-white"
@@ -180,7 +201,7 @@ export default function GalleryPage() {
                                     <line x1="13" y1="1" x2="1" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" />
                                 </svg>
                             </button>
-                            {/* Name tag */}
+
                             <div className="absolute bottom-0 left-0 right-0 py-4 px-6 bg-gradient-to-t from-black/80 to-transparent">
                                 <p className="text-white font-bold text-lg">{lightbox.name}</p>
                                 <p className="text-[#F26522] text-xs font-bold tracking-widest uppercase mt-0.5">{lightbox.category}</p>
@@ -192,3 +213,6 @@ export default function GalleryPage() {
         </main>
     );
 }
+
+
+
