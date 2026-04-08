@@ -50,7 +50,7 @@ export default function AboutPage() {
     return (
         <main
             ref={containerRef}
-            className="bg-[#131313] text-white selection:bg-[#F26522] selection:text-white pt-24 overflow-x-hidden min-h-screen"
+            className="bg-[#131313] text-white selection:bg-[#F26522] selection:text-white overflow-x-hidden min-h-screen"
         >
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Syne:wght@400;700;800&family=Alex+Brush&display=swap');
@@ -79,7 +79,7 @@ export default function AboutPage() {
                             <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522]">Our Sacred Legacy</span>
                             <div className="w-8 h-px bg-[#F26522]" />
                         </div>
-                        <h1 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[1.1] tracking-tight">
+                        <h1 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[0.95] tracking-tight">
                             A Heritage of <br />
                             <em className="text-[#F26522] italic">Excellence</em>
                         </h1>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                                         <span className="font-cormorant text-9xl font-light text-[#f26522]/10 group-hover:text-[#f26522]/80 transition-all duration-700 select-none" style={{ WebkitTextStroke: '1px rgba(242, 101, 34, 0.2)' }}>
                                             {section.year}
                                         </span>
-                                        <h2 className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">
+                                        <h2 className="text-6xl md:text-7xl font-serif text-white leading-[0.95] tracking-tight">
                                             {section.title}
                                         </h2>
                                     </div>
@@ -144,18 +144,14 @@ export default function AboutPage() {
                                 />
                                 <div className="absolute inset-0 bg-[#181818]/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
 
-                                <div className="absolute bottom-6 left-6 border border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md px-4 py-2">
-                                    <span className="font-syne text-[9px] tracking-[0.4em] uppercase text-[#F26522]">
-                                        Archive {index + 1}
-                                    </span>
-                                </div>
+
                             </motion.div>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className="relative bg-[#131313] text-white py-40 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
+            <section className="relative bg-[#131313] text-white py-20 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
 
 
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
@@ -168,7 +164,7 @@ export default function AboutPage() {
                         >
                             The Foundation
                         </motion.span>
-                        <h2 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[1.1] tracking-tight">
+                        <h2 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[0.95] tracking-tight">
                             The Spirit of <br />
                             <span className="italic text-[#F26522]">Bhetghat</span>
                         </h2>
@@ -201,18 +197,18 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="relative py-48 px-6 text-center bg-gradient-to-b from-[#131313] to-[#181818]">
+            <section className="relative py-50 px-6  text-center bg-gradient-to-b from-[#131313] to-[#181818]">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl mx-auto space-y-12 relative z-10"
+                    className="max-w-4xl pb-20 mx-auto space-y-12 relative z-10"
                 >
-                    <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522]">
+                    <span className="font-syne px-10 text-[10px] tracking-[0.5em] uppercase text-[#F26522]">
                         Join the Legacy
                     </span>
-                    <h2 className="text-7xl md:text-8xl font-serif text-white leading-[1.1] tracking-tight">
+                    <h2 className="text-7xl md:text-8xl font-serif text-white leading-[0.95] tracking-tight">
                         Experience the <br />
                         <em className="italic text-[#F26522]">Heritage.</em>
                     </h2>
@@ -237,7 +233,7 @@ export default function AboutPage() {
                 </motion.div>
 
 
-                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw] leading-none select-none pointer-events-none whitespace-nowrap opacity-[0.02] z-0">
+                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw]  select-none pointer-events-none whitespace-nowrap opacity-[0.02] z-0">
                     <Image
                         src="/images/delivery.jpg"
                         alt="Logo"

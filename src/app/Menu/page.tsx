@@ -24,22 +24,16 @@ export default function MenuPage() {
             />
 
             <section className="relative w-full h-[250px] md:h-[350px] z-10 border-b-4 border-[#131313]">
-                <Image
-                    src="/images/delivery.jpg"
-                    alt="Bhetghat Menu Hero"
-                    fill
-                    className="object-cover object-center brightness-[0.4]"
-                    priority
-                />
+
                 <div className="absolute inset-0 flex items-center justify-center pt-16">
                     <h1 className="text-4xl md:text-6xl font-serif font-bold text-white tracking-widest drop-shadow-2xl shadow-black">
-                        Bhetghat <span className="text-[#F26522]">Menu</span>
+                        Bhetghat <span className="text-[#F26522] italic">Menu</span>
                     </h1>
                 </div>
             </section>
 
 
-            <div className="relative z-10 w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 mt-16 mb-24">
+            <div className="relative z-10 w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 mb-24">
                 <nav className="flex overflow-x-auto gap-x-8 md:gap-x-10 pb-4 snap-x scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {allCategories.map((cat) => (
                         <button

@@ -30,7 +30,6 @@ export default function GalleryPage() {
             className="min-h-screen bg-[#13131313] text-white pt-28 pb-24 relative overflow-hidden"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-            {/* -- PREMIUM GEOMETRIC ORNAMENT -- */}
             <div className="absolute bottom-0 right-0 pointer-events-none z-0 opacity-20 transform translate-x-1/4 translate-y-1/4 overflow-hidden">
                 <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -75,7 +74,7 @@ export default function GalleryPage() {
                     transition={{ duration: 0.7 }}
                     className="text-5xl md:text-6xl font-black tracking-tight text-white mb-4"
                 >
-                    Our Gallery
+                    Our <span className="text-[#F26522] italic">Gallery</span>
                 </motion.h1>
 
 
