@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function DeliverySection() {
     return (
-        <section className="bg-[#2a2a2a] w-full max-w-screen-xl 2xl:max-w-[2000px] mx-auto rounded-3xl p-1 mb-20 md:p-12 overflow-hidden relative">            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        <section className="bg-[#2a2a2a] w-[80vw] max-w-screen-xl 2xl:max-w-[2000px] mx-auto rounded-3xl p-1 mb-20 md:p-12 overflow-hidden relative">            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
             <div className="p-8 md:p-0">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-white mb-4 sm:mb-6">
                     Bhetghat <br />
