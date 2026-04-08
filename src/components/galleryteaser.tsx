@@ -15,8 +15,7 @@ export default function GalleryTeaser() {
         <section className="bg-[#181818] py-20 sm:py-28 md:py-40 px-4 sm:px-8 overflow-hidden relative">
             <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                 <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-32 items-center">
-                    {/* Visual Side - Editorial Grid */}
-                    <div className="lg:w-[55%] grid grid-cols-2 gap-3 sm:gap-6 h-[350px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full">
+                    <div className="lg:w-[55%] grid grid-cols-2 gap-3 sm:gap-6 h-[350px] sm:h-[450px] md:h-[600px] lg:h-[600px] w-full">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -58,9 +57,8 @@ export default function GalleryTeaser() {
                         </motion.div>
                     </div>
 
-                    {/* Text Side - Editorial Styling */}
-                    <div className="lg:w-[40%] space-y-10">
-                        <div className="space-y-6">
+                    <div className="lg:w-[30%] space-y-10 mb-40">
+                        <div className="space-y-6 ">
                             <motion.span
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
