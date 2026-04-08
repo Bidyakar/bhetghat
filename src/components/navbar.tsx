@@ -20,9 +20,9 @@ export default function Navbar() {
     return (
         <nav className="fixed top-0 w-full z-50 bg-[#181818]/20 backdrop-blur-lg border-b border-white/5">
             <div className="flex justify-between items-center px-4 sm:px-8 lg:px-16 2xl:px-32 py-2 md:py-3 w-full max-w-[2200px] mx-auto">
-                <div className="relative h-12 md:h-16 flex items-center" style={{ width: "clamp(120px, 16vw, 240px)" }}>
-                    <Link href="/" className="absolute top-1/2 -translate-y-[45%] left-0 z-50">
-                        <Image src="/images/logo.png" alt="Bhetghat Logo" width={300} height={300} className="w-[30vw] min-w-[100px] max-w-[300px] h-auto mb-20 object-contain transition-transform duration-500 hover:scale-105" priority />
+                <div className="relative h-12 md:h-14 flex items-center w-28 sm:w-36 md:w-44 lg:w-52">
+                    <Link href="/" className="block">
+                        <Image src="/images/logo.png" alt="Bhetghat Logo" width={300} height={200} className="w-full h-auto object-contain" priority />
                     </Link>
                 </div>
 
