@@ -69,7 +69,7 @@ export default function MenuPage() {
                             key={item.id}
                             className="relative mt-20"
                         >
-                            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full border-[10px] border-[#f26522] overflow-hidden z-20 shadow-2xl bg-[#112536]">
+                            <div className="absolute -top-35 left-1/2 -translate-x-1/2 w-56 sm:w-64 h-56 sm:h-64 rounded-full border-[6px] border-[#f26522]/80 overflow-hidden z-20 shadow-2xl bg-[#112536] transition-transform duration-500 group-hover:scale-105">
                                 <Image
                                     src={item.image || '/images/thakali.jpg'}
                                     alt={item.name}
@@ -79,7 +79,7 @@ export default function MenuPage() {
                             </div>
 
 
-                            <div className="border border-[#d2a35e] pt-28 px-6 pb-6 flex flex-col h-[340px] bg-transparent relative z-10">
+                            <div className="border border-[#d2a35e]/40 rounded-b-lg rounded-t-lg pt-28 px-6 pb-6  flex flex-col h-[340px] bg-transparent relative z-10">
 
 
                                 <div className="text-right text-white/40 text-[10px] sm:text-xs tracking-widest mb-3 uppercase">
@@ -95,8 +95,8 @@ export default function MenuPage() {
                                 </p>
 
                                 <div className="flex justify-between items-end mt-4">
-                                    <span className="text-white text-lg font-bold tracking-wider">
-                                        Rs.{(item.price).toFixed(2)}
+                                    <span className="text-white px-6 sm:px-8 md:px-22 text-sm sm:text-base md:text-lg font-bold tracking-wider">
+                                        NPR.{(item.price)}
                                     </span>
 
                                 </div>

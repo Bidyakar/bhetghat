@@ -14,12 +14,19 @@ const instaFeed = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0e0e0e] pt-20  border-outline-variant/10 ">
-            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-16">
-                    <div className="space-y-6">
-                        <div className="text-3xl font-black text-white tracking-tighter font-headline">
-                            Bhetghat
+        <footer className="bg-[#0e0e0e] py-12 lg:py-16 border-t border-white/5 ">
+            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-4 mb-10">
+                    <div className="space-y-6 ">
+                        <div className="mb-2">
+                            <Image
+                                src="/images/logo.png"
+                                alt="Bhetghat Logo"
+                                width={400}
+                                height={300}
+                                className="w-40 md:w-48 lg:w-56 h-auto object-contain transition-transform duration-500 hover:scale-105"
+                                priority
+                            />
                         </div>
                         <p className="text-on-surface-variant text-sm leading-relaxed max-w-xs">
                             Preserving the culinary heritage of Nepal through every spice
@@ -40,7 +47,7 @@ export default function Footer() {
 
                     <div className="space-y-6">
                         <h4 className="text-xl font-headline font-bold text-white">Useful Links</h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-3 ">
                             <li><Link href="#" className="text-on-surface-variant hover:text-[#F26522] transition-colors">Registration</Link></li>
                             <li><Link href="#" className="text-on-surface-variant hover:text-[#F26522] transition-colors">Login</Link></li>
                             <li><Link href="#" className="text-on-surface-variant hover:text-[#F26522] transition-colors">Policy</Link></li>
@@ -66,13 +73,13 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-2 pb-2">
                     <div className="footer-copy-right">
                         <p className="text-on-surface-variant text-sm">
                             Copyright © {new Date().getFullYear()} All rights reserved
                         </p>
                     </div>
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-4">
                         <span className="text-white font-bold text-sm tracking-wider uppercase">Follow Us</span>
                         <div className="flex gap-4">
                             <Link href="https://www.facebook.com/profile.php?id=100094227939280" className="w-10 h-10 rounded-full bg-surface-container-low border border-white/5 flex items-center justify-center text-on-surface-variant hover:text-[#0866FF] hover:border-[#0866FF]/30 transition-all group">
@@ -89,6 +96,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+
             </div>
         </footer>
     );

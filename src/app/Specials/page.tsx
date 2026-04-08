@@ -68,7 +68,7 @@ export default function SpecialsPage() {
 
             <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
 
-                <div className="relative z-10 flex flex-col justify-center gap-6 lg:gap-8 px-10 md:px-16 pt-36 pb-16 bg-[#181818]">
+                <div className="relative z-10 flex flex-col mb-10 justify-center gap-6 lg:gap-8 px-10 md:px-16 pt-36 pb-16 bg-[#181818]">
 
 
                     <motion.div
@@ -79,7 +79,7 @@ export default function SpecialsPage() {
                     >
                         <div className="w-8 h-px bg-[#F26522]" />
                         <span className="font-syne text-[10px] tracking-[0.4em] uppercase text-[#F26522]">
-                            Established in Kathmandu
+                            Established in Chitwan
                         </span>
                         <div className="w-8 h-px bg-[#F26522]" />
                     </motion.div>
@@ -127,18 +127,18 @@ export default function SpecialsPage() {
                 </div>
 
 
-                <div className="relative flex items-center justify-center p-10 lg:p-20 overflow-hidden">
+                <div className="relative flex items-center justify-center overflow-hidden" style={{ padding: "clamp(1.5rem, 4vw, 5rem)" }}>
                     <motion.div
                         initial={{ opacity: 0, scale: 1.05 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.4 }}
-                        className="relative z-10 rounded-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border-[6px] sm:border-[10px] border-white/10 group w-full aspect-square max-w-[800px]"
+                        className="relative z-10 rounded-full overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border-[5px] border-[#F26522]/70 group w-full aspect-square" style={{ maxWidth: "clamp(280px, 38vw, 800px)" }}
                     >
                         <Image
                             src="/images/thakali.jpg"
                             alt="Bhetghat signature dish"
                             fill
-                            className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                            className="object-cover  transition-transform duration-[2000ms] group-hover:scale-105"
                             priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#131313] via-[#0a0805]/10 to-transparent" />

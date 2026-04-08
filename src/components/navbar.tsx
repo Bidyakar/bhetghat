@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -18,10 +19,10 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-[#181818]/20 backdrop-blur-lg border-b border-white/5">
-            <div className="flex justify-between items-center px-4 sm:px-8 lg:px-16 2xl:px-32 py-4 w-full max-w-[2200px] mx-auto">
-                <div className="text-2xl sm:text-3xl font-serif text-white tracking-tight">
-                    <Link href="/" className="hover:text-[#F26522] transition-colors italic">
-                        Bhetghat
+            <div className="flex justify-between items-center px-4 sm:px-8 lg:px-16 2xl:px-32 py-2 md:py-3 w-full max-w-[2200px] mx-auto">
+                <div className="relative h-12 md:h-16 flex items-center" style={{ width: "clamp(120px, 16vw, 240px)" }}>
+                    <Link href="/" className="absolute top-1/2 -translate-y-[45%] left-0 z-50">
+                        <Image src="/images/logo.png" alt="Bhetghat Logo" width={300} height={300} className="w-[30vw] min-w-[100px] max-w-[300px] h-auto mb-20 object-contain transition-transform duration-500 hover:scale-105" priority />
                     </Link>
                 </div>
 
