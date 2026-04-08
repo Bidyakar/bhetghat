@@ -29,9 +29,9 @@ const aboutCaptions = [
 
 export default function AboutSection() {
     return (
-        <section className="py-32 bg-[#131313] overflow-hidden relative">
+        <section className="py-15 bg-[#131313] overflow-hidden relative">
             <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-10 2xl:px-25 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-25">
+                <div className="flex flex-col lg:flex-row items-center justify-between ">
 
                     <div className="lg:w-[45%] space-y-10">
                         <div className="space-y-6">
