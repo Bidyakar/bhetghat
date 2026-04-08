@@ -100,18 +100,17 @@ export default function AboutSection() {
                         </motion.div>
                     </div>
 
-                    {/* Right Image */}
                     <div className="lg:w-[45%] relative group">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8 }}
-                            className="relative rounded-[3rem] overflow-hidden mt-20 shadow-2xl border border-white/5 bg-[#151515]"
+                            className="relative rounded-[3rem] overflow-hidden mt-20 shadow-2xl border border-white/5 bg-[#131313]"
                         >
                             <Image
                                 src="/images/thakali.jpg"
                                 alt="Authentic Thakali Experience"
-                                width={700}
+                                width={900}
                                 height={900}
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000 contrast-110"
                             />

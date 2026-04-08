@@ -333,7 +333,7 @@ export default function SpecialsPage() {
             </section>
 
 
-            <section className="relative min-h-[50vh] flex flex-col items-center justify-center text-center overflow-hidden px-6 py-32">
+            <section className="relative min-h-[40vh] flex flex-col items-center justify-center text-center overflow-hidden px-6 py-32">
 
                 <div className="absolute inset-0 z-0">
                     <Image src="/images/thakali.jpg" alt="" fill className="object-cover opacity-[0.06]" />

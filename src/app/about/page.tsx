@@ -134,7 +134,7 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1.2 }}
-                                className="lg:w-1/2 relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden bg-neutral-900 shadow-2xl"
+                                className="lg:w-1/2 relative aspect-[3/4] lg:aspect-[4/5] w-full overflow-hidden bg-neutral-900 shadow-2xl"
                             >
                                 <Image
                                     src={section.image}
