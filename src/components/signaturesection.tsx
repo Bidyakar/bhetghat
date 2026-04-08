@@ -12,7 +12,7 @@ const smallDishes = [
 
 export default function SignatureSection() {
     return (
-        <section className="py-12 sm:py-16 md:py-24 bg-[#181818] relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-24 bg-[#131313] relative overflow-hidden">
 
             <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
@@ -129,7 +129,7 @@ export default function SignatureSection() {
                             className="space-y-5"
                         >
                             <h2
-                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.0] tracking-tight text-white"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[0.95] tracking-tight text-white"
                                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                             >
                                 Signature Culinary <br />
@@ -145,7 +145,7 @@ export default function SignatureSection() {
                         </motion.div>
 
 
-                        <div className="space-y-6 max-w-xl">
+                        <div className="space-y-4 max-w-xl">
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}

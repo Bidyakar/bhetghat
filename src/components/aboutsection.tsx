@@ -29,9 +29,9 @@ const aboutCaptions = [
 
 export default function AboutSection() {
     return (
-        <section className="py-32 bg-[#181818] overflow-hidden relative">
-            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
+        <section className="py-32 bg-[#131313] overflow-hidden relative">
+            <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-10 2xl:px-25 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-25">
 
                     <div className="lg:w-[45%] space-y-10">
                         <div className="space-y-6">
@@ -46,7 +46,7 @@ export default function AboutSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight"
+                                className="text-6xl md:text-7xl font-serif text-white leading-[0.75] tracking-tight"
                             >
                                 Discover Your <br />
                                 <span className="italic text-[#F26522]">Taste</span>
@@ -64,7 +64,7 @@ export default function AboutSection() {
                             </motion.p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-6">
                             {aboutCaptions.map((caption, index) => (
                                 <motion.div
                                     key={caption.id}
@@ -90,10 +90,10 @@ export default function AboutSection() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            className="pt-6"
+
                         >
-                            <Link href="/about" className="inline-flex items-center gap-4 group">
-                                <span className="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-2xl font-bold hover:bg-[#F26522] hover:border-transparent transition-all">
+                            <Link href="/about" className="inline-flex items-center">
+                                <span className="bg-white/5 border border-white/10 text-white px-5 py-4 rounded-2xl font-bold hover:bg-[#F26522] mb-5 hover:border-transparent transition-all">
                                     Our Story
                                 </span>
                             </Link>
