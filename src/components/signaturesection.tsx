@@ -12,7 +12,7 @@ const smallDishes = [
 
 export default function SignatureSection() {
     return (
-        <section className="py-12 sm:py-16 md:py-24 bg-[#131313] relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-24 bg-[#0A0A0A] relative overflow-hidden">
 
             <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">

@@ -68,7 +68,6 @@ export default function AboutPage() {
 
             <div className="fixed inset-0 noise-overlay pointer-events-none z-50 mix-blend-overlay" />
 
-            {/* ── HERO SECTION ── */}
             <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-24 border-b border-white/5">
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 flex flex-col items-center text-center">
                     <motion.div
@@ -99,7 +98,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ── STORY SECTIONS ── */}
             <section className="relative py-20 lg:py-40 px-6 md:px-12 lg:px-24">
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 space-y-32 lg:space-y-56">
                     {storySections.map((section, index) => (
@@ -107,7 +105,6 @@ export default function AboutPage() {
                             key={section.year}
                             className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24 group`}
                         >
-                            {/* Text Content */}
                             <div className="lg:w-1/2 space-y-10 relative z-10">
                                 <motion.div
                                     initial={{ opacity: 0, y: 40 }}
@@ -125,7 +122,6 @@ export default function AboutPage() {
                                         </h2>
                                     </div>
 
-                                    {/* Expanding Line Effect from Specials */}
                                     <div className="w-12 h-px bg-[#F26522]/40 group-hover:w-full group-hover:bg-[#F26522] transition-all duration-700" />
 
                                     <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
@@ -134,7 +130,6 @@ export default function AboutPage() {
                                 </motion.div>
                             </div>
 
-                            {/* Image Section with Specials Hover Effects */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -149,12 +144,9 @@ export default function AboutPage() {
                                     className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] ease-out group-hover:scale-105"
                                 />
 
-                                {/* Corner Accent Effect from Specials */}
                                 <div className="absolute top-0 left-0 w-0 h-0 group-hover:w-20 group-hover:h-20 transition-all duration-700 overflow-hidden">
                                     <div className="absolute top-0 left-0 w-20 h-20 bg-[#F26522]" style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }} />
                                 </div>
-
-                                {/* Floating Label Effect from Specials */}
                                 <div className="absolute bottom-6 left-6 bg-[#131313]/80 backdrop-blur-md px-4 py-2 border border-white/10">
                                     <span className="font-syne text-[10px] tracking-[0.3em] uppercase text-[#F26522]">
                                         {section.category}
@@ -168,8 +160,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ── VALUES SECTION ── */}
-            <section className="relative bg-[#131313] text-white py-32 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
+            <section className="relative bg-[#0A0A0A] text-white py-32 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                     <div className="text-center mb-16 lg:mb-32 space-y-6">
                         <motion.span
@@ -213,7 +204,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ── CTA SECTION ── */}
             <section className="relative py-40 px-6 text-center bg-gradient-to-b from-[#131313] to-[#181818] overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -249,9 +239,7 @@ export default function AboutPage() {
                     </div>
                 </motion.div>
 
-                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw] select-none pointer-events-none whitespace-nowrap opacity-[0.03] z-0 italic">
-                    BHETGHAT
-                </div>
+
             </section>
         </main>
     );

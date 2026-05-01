@@ -12,7 +12,7 @@ const teaserImages = [
 
 export default function GalleryTeaser() {
     return (
-        <section className="bg-[#131313] py-20 sm:py-28 md:py-40 px-4 sm:px-8 overflow-hidden relative">
+        <section className="bg-[#0A0A0A] py-20 sm:py-28 md:py-40 px-4 sm:px-8 overflow-hidden relative">
             <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
                 <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-32 items-center">
                     <div className="lg:w-[55%] grid grid-cols-2 gap-3 sm:gap-6 h-[350px] sm:h-[450px] md:h-[600px] lg:h-[600px] w-full">

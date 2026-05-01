@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function PromoSection() {
     return (
-        <section className="py-20 px-6 lg:px-16 2xl:px-32 min-h-[70vh] w-full max-w-[2500px] mx-auto bg-[#131313]">
+        <section className="py-20 px-6 lg:px-16 2xl:px-32 min-h-[70vh] w-full max-w-[2500px] mx-auto bg-[#0A0A0A]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-auto">
 
 

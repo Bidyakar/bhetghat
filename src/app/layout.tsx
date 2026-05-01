@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
-      <body className={`${inter.variable} ${plusJakartaSans.variable} ${dmSerifDisplay.variable} bg-[#0e0e0e] text-[#ededed] font-body`}>
+      <body className={`${inter.variable} ${plusJakartaSans.variable} ${dmSerifDisplay.variable} bg-[#0A0A0A] text-[#ededed] font-body`}>
         <Navbar />
         {children}
         <Footer />
