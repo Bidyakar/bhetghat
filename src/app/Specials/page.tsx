@@ -44,7 +44,7 @@ export default function SpecialsPage() {
     return (
         <main
             ref={containerRef}
-            className="bg-[#181818] text-white selection:bg-[#F26522] selection:text-white overflow-x-hidden"
+            className="bg-[#0A0A0A] text-white selection:bg-[#F26522] selection:text-white overflow-x-hidden"
         >
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Syne:wght@400;700;800&family=Alex+Brush&display=swap');
@@ -68,7 +68,7 @@ export default function SpecialsPage() {
 
             <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
 
-                <div className="relative z-10 flex flex-col mb-10 justify-center gap-6 lg:gap-8 px-10 md:px-16 pt-36 pb-16 bg-[#181818]">
+                <div className="relative z-10 flex flex-col mb-10 justify-center gap-6 lg:gap-8 px-10 md:px-16 pt-36 pb-16 bg-[#0A0A0A]">
 
 
                     <motion.div
@@ -98,7 +98,7 @@ export default function SpecialsPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-7xl md:text-8xl py-10 font-serif text-white leading-[1.1] tracking-tight"
+                            className="text-5xl md:text-7xl lg:text-8xl py-6 md:py-10 font-serif text-white leading-[1.1] tracking-tight"
                         >
                             The<br />
                             <em className="text-[#F26522]">Specimens</em>
@@ -175,15 +175,15 @@ export default function SpecialsPage() {
                             className="relative group"
                         >
 
-                            <div className="h-px bg-white/5 group-hover:bg-[#F26522]/30 transition-colors duration-700 ml-16" />
+                            <div className="h-px bg-white/5 group-hover:bg-[#F26522]/30 transition-colors duration-700 md:ml-16" />
 
-                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 py-16 lg:py-24 ml-16">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 py-12 lg:py-24 md:ml-16">
 
 
-                                <div className="lg:col-span-2 flex flex-col items-start gap-8 pt-4">
+                                <div className="lg:col-span-2 flex flex-col items-start gap-4 md:gap-8 pt-4">
                                     <div className="flex flex-col gap-1">
                                         <span className="font-syne text-[8px] tracking-[0.4em] uppercase text-[#F26522]/60">Specimen No.</span>
-                                        <span className="font-cormorant text-9xl font-light text-white/10 group-hover:text-white/80 transition-all duration-700 select-none">
+                                        <span className="font-cormorant text-7xl md:text-9xl font-light text-white/10 group-hover:text-white/80 transition-all duration-700 select-none">
                                             0{index + 1} <span className="text-[10px] text-[#F26522]/30 group-hover:text-[#F26522]/60 transition-colors ml-1">/ 03</span>
                                         </span>
                                     </div>
@@ -214,7 +214,7 @@ export default function SpecialsPage() {
 
                                 <div className={`lg:col-span-5 flex flex-col justify-center gap-8 px-0 lg:px-12 ${index % 2 !== 0 ? 'lg:col-start-3' : ''}`}>
                                     <div className="space-y-5">
-                                        <h2 className="text-5xl md:text-6xl py-10 font-serif text-white leading-[1.1] tracking-tight group-hover:text-[#F26522] transition-colors duration-500 ">
+                                        <h2 className="text-4xl md:text-5xl lg:text-6xl py-6 md:py-10 font-serif text-white leading-[1.1] tracking-tight group-hover:text-[#F26522] transition-colors duration-500 ">
                                             <em>{item.name}</em>
                                         </h2>
                                         <div className="w-10 h-px bg-[#F26522] group-hover:w-100 transition-all duration-700" />
@@ -249,7 +249,7 @@ export default function SpecialsPage() {
                     ))}
 
 
-                    <div className="h-px bg-white/5 ml-16" />
+                    <div className="h-px bg-white/5 md:ml-16" />
                 </div>
             </section>
 
@@ -285,8 +285,8 @@ export default function SpecialsPage() {
                             viewport={{ once: true }}
                             className="space-y-6"
                         >
-                            <span className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">The Craftsman</span>
-                            <h2 className="text-6xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">
+                            <span className="text-4xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">The Craftsman</span>
+                            <h2 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] tracking-tight">
                                 Curating the<br />
                                 <em className="text-[#F26522]">Soul of Kathmandu</em>
                             </h2>

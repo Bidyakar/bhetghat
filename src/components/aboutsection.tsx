@@ -46,10 +46,10 @@ export default function AboutSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-6xl md:text-7xl font-serif text-white leading-[0.75] tracking-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-[0.95] tracking-tight"
                             >
                                 Discover Your <br />
-                                <span className="italic text-[#F26522]">Taste</span>
+                                <span className="italic text-[#F26522]">Taste.</span>
                             </motion.h2>
                             <motion.p
                                 initial={{ opacity: 0 }}

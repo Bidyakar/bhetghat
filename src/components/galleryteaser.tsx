@@ -57,7 +57,7 @@ export default function GalleryTeaser() {
                         </motion.div>
                     </div>
 
-                    <div className="lg:w-[30%] space-y-10 mb-40">
+                    <div className="lg:w-[30%] space-y-10 mb-20 lg:mb-40">
                         <div className="space-y-6 ">
                             <motion.span
                                 initial={{ opacity: 0, x: 20 }}

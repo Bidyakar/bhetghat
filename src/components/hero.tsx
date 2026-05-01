@@ -87,20 +87,20 @@ export default function HeroSection() {
                             {slides[current].badge}
                         </motion.span>
                         <h1
-                            className="text-4xl md:text-6xl lg:text-8xl font-headline font-black text-white leading-[0.95] tracking-tighter mb-8"
+                            className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-headline font-black text-white leading-[1.1] md:leading-[0.95] tracking-tighter mb-8"
                             dangerouslySetInnerHTML={{ __html: slides[current].title }}
                         />
                         <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 font-medium text-[#ffb599]">
                             {slides[current].description}
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link href={slides[current].href}>
-                                <button className="bg-[#F26522] text-white px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl shadow-[#F26522]/20 hover:shadow-[#F26522]/40 hover:-translate-y-1 transition-all">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full max-w-md mx-auto sm:max-w-none">
+                            <Link href={slides[current].href} className="w-full sm:w-auto">
+                                <button className="w-full bg-[#F26522] text-white px-10 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg shadow-[0_15px_40px_rgba(242,101,34,0.25)] hover:shadow-[0_15px_40px_rgba(242,101,34,0.45)] hover:-translate-y-1 transition-all duration-300">
                                     {slides[current].cta}
                                 </button>
                             </Link>
-                            <Link href="/gallery">
-                                <button className="bg-white/5 backdrop-blur-md text-white border border-white/10 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all">
+                            <Link href="/gallery" className="w-full sm:w-auto">
+                                <button className="w-full bg-white/5 backdrop-blur-md text-white border border-white/10 px-10 md:px-12 py-4 md:py-5 rounded-2xl font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 shadow-xl">
                                     View Gallery
                                 </button>
                             </Link>

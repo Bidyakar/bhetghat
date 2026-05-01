@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const storySections = [
     {
@@ -11,14 +11,16 @@ const storySections = [
         title: "A Vision of Heritage",
         content: "Bhetghat was born from a simple yet profound vision: to bring the authentic flavors of Kathmandu to the world. Our journey started in the heart of the Himalayas, where spices and traditions were passed down through generations, crafting a sanctuary for those who seek the soul of Nepalese cuisine.",
         image: "/images/chickentaas.jpg",
-        alt: "Vintage-style shot of a Himalayan mountain village at dawn"
+        alt: "Vintage-style shot of a Himalayan mountain village at dawn",
+        category: "The Beginning"
     },
     {
         year: "1998",
         title: "Establishing Roots",
         content: "We introduced multiple heritage dishes to our menu, each with its own unique story and flavor profile. Every ingredient was carefully sourced, and every recipe was a tribute to our ancestral heritage, ensuring that the legacy of our mountains lived on in every bite.",
         image: "/images/drumstick2.jpg",
-        alt: "Authentic Thakali set being prepared in a traditional copper kitchen"
+        alt: "Authentic Thakali set being prepared in a traditional copper kitchen",
+        category: "The Evolution"
     }
 ];
 
@@ -50,7 +52,7 @@ export default function AboutPage() {
     return (
         <main
             ref={containerRef}
-            className="bg-[#131313] text-white selection:bg-[#F26522] selection:text-white overflow-x-hidden min-h-screen"
+            className="bg-[#0A0A0A] text-white selection:bg-[#F26522] selection:text-white overflow-x-hidden min-h-screen"
         >
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Syne:wght@400;700;800&family=Alex+Brush&display=swap');
@@ -64,8 +66,9 @@ export default function AboutPage() {
                 }
             `}</style>
 
-            <div className="absolute inset-0 noise-overlay pointer-events-none z-50 mix-blend-overlay" />
+            <div className="fixed inset-0 noise-overlay pointer-events-none z-50 mix-blend-overlay" />
 
+            {/* ── HERO SECTION ── */}
             <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-24 border-b border-white/5">
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 flex flex-col items-center text-center">
                     <motion.div
@@ -79,7 +82,7 @@ export default function AboutPage() {
                             <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522]">Our Sacred Legacy</span>
                             <div className="w-8 h-px bg-[#F26522]" />
                         </div>
-                        <h1 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[0.95] tracking-tight">
+                        <h1 className="text-5xl md:text-8xl py-6 md:py-10 font-serif text-white leading-[1.1] md:leading-[0.95] tracking-tight">
                             A Heritage of <br />
                             <em className="text-[#F26522] italic">Excellence</em>
                         </h1>
@@ -96,14 +99,15 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="relative py-40 px-6 md:px-12 lg:px-24">
-                <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 space-y-48">
+            {/* ── STORY SECTIONS ── */}
+            <section className="relative py-20 lg:py-40 px-6 md:px-12 lg:px-24">
+                <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 space-y-32 lg:space-y-56">
                     {storySections.map((section, index) => (
                         <div
                             key={section.year}
                             className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24 group`}
                         >
-
+                            {/* Text Content */}
                             <div className="lg:w-1/2 space-y-10 relative z-10">
                                 <motion.div
                                     initial={{ opacity: 0, y: 40 }}
@@ -116,12 +120,13 @@ export default function AboutPage() {
                                         <span className="font-cormorant text-9xl font-light text-[#f26522]/10 group-hover:text-[#f26522]/80 transition-all duration-700 select-none" style={{ WebkitTextStroke: '1px rgba(242, 101, 34, 0.2)' }}>
                                             {section.year}
                                         </span>
-                                        <h2 className="text-6xl md:text-7xl font-serif text-white leading-[0.95] tracking-tight">
+                                        <h2 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] md:leading-[0.95] tracking-tight group-hover:text-[#F26522] transition-colors duration-500">
                                             {section.title}
                                         </h2>
                                     </div>
 
-                                    <div className="w-12 h-px bg-[#F26522]/40 group-hover:w-143 group-hover:bg-[#F26522] transition-all duration-700" />
+                                    {/* Expanding Line Effect from Specials */}
+                                    <div className="w-12 h-px bg-[#F26522]/40 group-hover:w-full group-hover:bg-[#F26522] transition-all duration-700" />
 
                                     <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
                                         &ldquo;{section.content}&rdquo;
@@ -129,6 +134,7 @@ export default function AboutPage() {
                                 </motion.div>
                             </div>
 
+                            {/* Image Section with Specials Hover Effects */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -140,22 +146,32 @@ export default function AboutPage() {
                                     src={section.image}
                                     alt={section.alt}
                                     fill
-                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] ease-out hover:scale-105"
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] ease-out group-hover:scale-105"
                                 />
+
+                                {/* Corner Accent Effect from Specials */}
+                                <div className="absolute top-0 left-0 w-0 h-0 group-hover:w-20 group-hover:h-20 transition-all duration-700 overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-20 h-20 bg-[#F26522]" style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }} />
+                                </div>
+
+                                {/* Floating Label Effect from Specials */}
+                                <div className="absolute bottom-6 left-6 bg-[#131313]/80 backdrop-blur-md px-4 py-2 border border-white/10">
+                                    <span className="font-syne text-[10px] tracking-[0.3em] uppercase text-[#F26522]">
+                                        {section.category}
+                                    </span>
+                                </div>
+
                                 <div className="absolute inset-0 bg-[#181818]/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
-
-
                             </motion.div>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className="relative bg-[#131313] text-white py-20 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
-
-
+            {/* ── VALUES SECTION ── */}
+            <section className="relative bg-[#131313] text-white py-32 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-white/5">
                 <div className="w-full max-w-[2200px] mx-auto px-6 lg:px-16 2xl:px-32 relative z-10">
-                    <div className="text-center mb-32 space-y-6">
+                    <div className="text-center mb-16 lg:mb-32 space-y-6">
                         <motion.span
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
@@ -164,7 +180,7 @@ export default function AboutPage() {
                         >
                             The Foundation
                         </motion.span>
-                        <h2 className="text-7xl md:text-8xl py-10 font-serif text-white leading-[0.95] tracking-tight">
+                        <h2 className="text-5xl md:text-8xl py-6 md:py-10 font-serif text-white leading-[1.1] md:leading-[0.95] tracking-tight">
                             The Spirit of <br />
                             <span className="italic text-[#F26522]">Bhetghat</span>
                         </h2>
@@ -180,11 +196,11 @@ export default function AboutPage() {
                                 transition={{ delay: index * 0.15, duration: 0.8 }}
                                 className="group flex flex-col gap-6"
                             >
-                                <div className="flex items-center gap-4 border-b border-gray pb-6 group-hover:border-[#F26522]/30 transition-colors duration-500">
-                                    <span className="font-syne text-[11px] tracking-[0.3em] text-[#F26522]">
+                                <div className="flex items-center gap-4 border-b border-white/10 pb-6 group-hover:border-[#F26522]/30 transition-colors duration-500">
+                                    <span className="font-syne text-[11px] tracking-[0.3em] text-[#F26522] font-bold">
                                         {value.id}
                                     </span>
-                                    <h3 className="font-cormorant text-3xl font-light italic text-gray-400">
+                                    <h3 className="font-cormorant text-3xl font-light italic text-zinc-400 group-hover:text-white transition-colors">
                                         {value.title}
                                     </h3>
                                 </div>
@@ -197,18 +213,19 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="relative py-50 px-6  text-center bg-gradient-to-b from-[#131313] to-[#181818]">
+            {/* ── CTA SECTION ── */}
+            <section className="relative py-40 px-6 text-center bg-gradient-to-b from-[#131313] to-[#181818] overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-4xl pb-20 mx-auto space-y-12 relative z-10"
+                    className="max-w-4xl mx-auto space-y-12 relative z-10"
                 >
-                    <span className="font-syne px-10 text-[10px] tracking-[0.5em] uppercase text-[#F26522]">
+                    <span className="font-syne text-[10px] tracking-[0.5em] uppercase text-[#F26522] font-bold">
                         Join the Legacy
                     </span>
-                    <h2 className="text-7xl md:text-8xl font-serif text-white leading-[0.95] tracking-tight">
+                    <h2 className="text-5xl md:text-8xl font-serif text-white leading-[1.1] md:leading-[0.95] tracking-tight">
                         Experience the <br />
                         <em className="italic text-[#F26522]">Heritage.</em>
                     </h2>
@@ -216,7 +233,7 @@ export default function AboutPage() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
                         <Link
                             href="/Menu"
-                            className="group flex items-center justify-center gap-3 bg-[#F26522] text-white w-full sm:w-auto px-10 py-5 font-syne text-[10px] tracking-[0.3em] uppercase hover:bg-[#d9561e] transition-colors duration-300"
+                            className="group flex items-center justify-center gap-3 bg-[#F26522] text-white w-full sm:w-auto px-10 py-5 font-syne text-[10px] tracking-[0.3em] uppercase hover:bg-[#d9561e] transition-colors duration-300 shadow-xl"
                         >
                             Explore Menu
                             <svg className="group-hover:translate-x-1 transition-transform" width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -232,14 +249,8 @@ export default function AboutPage() {
                     </div>
                 </motion.div>
 
-
-                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw]  select-none pointer-events-none whitespace-nowrap opacity-[0.02] z-0">
-                    <Image
-                        src="/images/delivery.jpg"
-                        alt="Logo"
-
-                        fill
-                    />
+                <div className="absolute h-full w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif font-light text-[18vw] select-none pointer-events-none whitespace-nowrap opacity-[0.03] z-0 italic">
+                    BHETGHAT
                 </div>
             </section>
         </main>
